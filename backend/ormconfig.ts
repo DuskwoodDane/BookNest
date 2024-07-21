@@ -17,7 +17,7 @@ function getEnv(env: string): Record<string, unknown> {
 function buildConnectionOptions() {
   const defaultConfig = getEnv('.env');
   const envConfig = getEnv(`.env.${process.env.NODE_ENV || 'dev'}`);
-  console.log('envc', process.env.NODE_ENV, envConfig);
+  console.log('env', process.env.NODE_ENV, envConfig);
   // configService
   const config = { ...defaultConfig, ...envConfig };
 
