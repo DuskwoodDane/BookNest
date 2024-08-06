@@ -9,6 +9,7 @@ import {
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from './user.entity';
+import { ResponseData } from 'src/types/public';
 
 @Controller('users')
 export class UserController {
@@ -25,7 +26,7 @@ export class UserController {
   }
 
   @Post()
-  create(@Body() user: User): Promise<User> {
+  create(@Body() user: User): Promise<ResponseData> {
     return this.userService.create(user);
   }
 
